@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useReducer } from "react";
-
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
@@ -40,7 +39,6 @@ const Login = (props) => {
 
   useEffect(() => {
     console.log("EFFECT RUNNING");
-
     return () => {
       console.log("EFFECT CLEANUP");
     };
@@ -69,7 +67,7 @@ const Login = (props) => {
   const passwordChangeHandler = (event) => {
     dispatchPassword({ type: "USER_INPUT", val: event.target.value });
 
-    setFormIsValid(emailState.isValid && event.target.value.trim().length > 6);
+    setFormIsValid(event.target.value.trim().length > 6 && emailState.isValid);
   };
 
   const validateEmailHandler = () => {
@@ -117,7 +115,7 @@ const Login = (props) => {
           />
         </div>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+          <Button type="submit" className={classes.button} disabled={!formIsValid}>
             Login
           </Button>
         </div>
