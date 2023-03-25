@@ -32,11 +32,11 @@
     border: 1px solid #ccc;
   }
   
-  .control input:focus {
+  /* .control input:focus {
     outline: none;
     border-color: #4f005f;
     background: #f6dbfc;
-  }
+  } */
   
   .control.invalid input {
     border-color: red;
